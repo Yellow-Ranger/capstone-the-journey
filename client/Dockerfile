@@ -2,7 +2,7 @@ FROM node:latest as builder
 WORKDIR /home/app
 COPY . .
 RUN npm ci --force && npm cache clean --force
-RUN npm run build --force
+RUN npm run build
 
 # 1. Nginx & Alpine
 FROM nginx:1.21-alpine

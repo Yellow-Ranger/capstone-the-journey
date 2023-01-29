@@ -25,7 +25,7 @@ services:
       - DB_URL=jdbc:mysql://adventure-time-db.chr04liwekaz.us-east-1.rds.amazonaws.com/adventure_time
       - DB_USERNAME=root
       - DB_PASSWORD=soccerBalls
-      - ***REMOVED***
-      - ***REMOVED***
+      - AWS-ACCESS-KEY=AKIASSYI7JPJKSTDGSWX
+      - AWS-SECRET-KEY=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
       - ALLOWED_ORIGINS=*
       
