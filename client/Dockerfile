@@ -1,8 +1,8 @@
 FROM node:19-alpine as builder
 WORKDIR /home/app
 COPY . .
-RUN npm ci && npm cache clean
-RUN npm run build 
+RUN npm ci --force && npm cache clean --force
+RUN npm run build --force
 
 # 1. Nginx & Alpine
 FROM nginx:1.21-alpine
