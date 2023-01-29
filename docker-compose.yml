@@ -3,22 +3,29 @@ version: "3.0"
 services:
 
   adventure-time-ui:
-    image: 932204825147.dkr.ecr.us-east-2.amazonaws.com/adventure-time-ui
+    image: adventure-time-ui
+    # build: 
+    #   context: adventure-time-ui
+    #   dockerfile: ./client
+    # image: 177723100114.dkr.ecr.us-east-1.amazonaws.com/adventure-time-ui
     ports:
       - "80:80"
+    restart: always
     depends_on:
       - adventure-time-api
 
   adventure-time-api:
-    image: 932204825147.dkr.ecr.us-east-2.amazonaws.com/adventure-time-api
-    environment:
-      - DB_URL=jdbc:mysql://adventure-time-db.cdtqegjqlsvt.us-east-2.rds.amazonaws.com:3306/adventure_time
-      - DB_USERNAME=admin
-      - DB_PASSWORD=soccerBalls
-      - AWS-ACCESS-KEY=AKIA5SC54ZI5XNC5JDV5
-      - AWS-SECRET-KEY=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
-      - ALLOWED_ORIGINS=http://adventure-time.us-east-2.elasticbeanstalk.com
+    image: adventure-time-api
+    # image: 177723100114.dkr.ecr.us-east-1.amazonaws.com/adventure-time-api
     ports:
       - "8080:8080"
-
+    container_name: adventure-time-api
+    restart: always
+    environment:
+      - DB_URL=jdbc:mysql://adventure-time-db.chr04liwekaz.us-east-1.rds.amazonaws.com/adventure_time
+      - DB_USERNAME=root
+      - DB_PASSWORD=soccerBalls
+      - ***REMOVED***
+      - ***REMOVED***
+      - ALLOWED_ORIGINS=*
       

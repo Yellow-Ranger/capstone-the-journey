@@ -66,8 +66,21 @@ function Login() {
 
     // </div>
 
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
+    <Grid
+      textAlign="center"
+      style={{ overflow: "hidden", marginTop: "10%" }}
+      verticalAlign="bottom"
+    >
+      <Grid.Column
+        style={{
+          maxWidth: 450,
+          background: "rgba(0, 0, 0, 0.4)",
+          border: "thin solid rgba(0, 0, 0, 0.6)",
+          boxShadow: "box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 20px",
+          borderRadius: "10px",
+          paddingBottom: "20px",
+        }}
+      >
         <Header as="h2" color="teal" textAlign="center">
           <Icon name="map signs" /> Log-in to your account
         </Header>
@@ -114,6 +127,11 @@ function Login() {
         </Form>
         <Message>
           New to us? <Link to="/register">Register</Link>
+        </Message>
+        <Message>
+          Demo credentials: <br />
+          Email: demo@demo.com <br />
+          Password: demo#2023
         </Message>
       </Grid.Column>
     </Grid>

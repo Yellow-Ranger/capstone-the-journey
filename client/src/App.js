@@ -49,7 +49,11 @@ function App() {
     };
 
     setUser(nextUser);
-    getProfileByUsername(nextUser.username).then(setProfile).catch(error => {toast.error(`${error}`)});
+    getProfileByUsername(nextUser.username)
+      .then(setProfile)
+      .catch((error) => {
+        toast.error(`${error}`);
+      });
   };
 
   const logout = () => {
@@ -89,15 +93,33 @@ function App() {
             <Router>
               <NavBar />
               <Switch>
-                <Route exact path="/login"><Login/></Route>
-                <Route exact path="/register"><Register /></Route>
-                <Route exact path="/profile"><ProfileView /></Route>
-                <Route exact path="/create/profile"><ProfileForm /></Route>
-                <Route exact path="/adventure/planning"><Map /></Route>
-                <Route exact path="/allTrips"><AllTrips /></Route>
-                <Route exact path="/trip/overview/:tripId"><TripOverview /></Route>
-                <Route exact path="/"><ViewHome /></Route>
-                <Route><NotFound /></Route>
+                <Route exact path="/login">
+                  <Login />
+                </Route>
+                <Route exact path="/register">
+                  <Register />
+                </Route>
+                <Route exact path="/profile">
+                  <ProfileView />
+                </Route>
+                <Route exact path="/create/profile">
+                  <ProfileForm />
+                </Route>
+                <Route exact path="/adventure/planning">
+                  <Map />
+                </Route>
+                <Route exact path="/allTrips">
+                  <AllTrips />
+                </Route>
+                <Route exact path="/trip/overview/:tripId">
+                  <TripOverview />
+                </Route>
+                <Route exact path="/">
+                  <ViewHome />
+                </Route>
+                <Route>
+                  <NotFound />
+                </Route>
               </Switch>
             </Router>
             <ToastContainer />
