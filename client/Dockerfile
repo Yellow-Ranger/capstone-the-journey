@@ -1,4 +1,4 @@
-FROM node:16-alpine as builder
+FROM node:latest as builder
 WORKDIR /home/app
 COPY . .
 RUN npm ci --force && npm cache clean --force
